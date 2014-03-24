@@ -1,136 +1,136 @@
 package packets
 
 const (
-	tcp_src   = 16
-	tcp_dst   = 16
-	tcp_seq   = 32
-	tcp_ack   = 32
-	tcp_ctl   = 16
-	tcp_winsz = 16
-	tcp_csum  = 16
-	tcp_urg   = 16
+	TcpSrc   = 16
+	TcpDst   = 16
+	TcpSeq   = 32
+	TcpAck   = 32
+	TcpCtl   = 16
+	TcpWinsz = 16
+	TcpCsum  = 16
+	TcpUrg   = 16
 )
 
-type tcp struct {
+type Tcp struct {
 }
 
-func (o tcp) Src(b []byte) (v uint16, err error) {
-	if v, err = read_b16(b, 0); err != nil {
+func (o Tcp) Src(b []byte) (v uint16, err error) {
+	if v, err = ReadB16(b, 0); err != nil {
 		return
 	}
-	v &= ((1 << (tcp_src + 0)) - 1) >> 0
+	v &= ((1 << (TcpSrc + 0)) - 1) >> 0
 	return
 }
-func (o tcp) SetSrc(b []byte, vn uint16) error {
-	v, err := read_b16(b, 0)
+func (o Tcp) SetSrc(b []byte, vn uint16) error {
+	v, err := ReadB16(b, 0)
 	if err != nil {
 		return err
 	}
-	err = write_b16(b, 0, v|(vn<<0)&((1<<(tcp_src+0))-1))
+	err = WriteB16(b, 0, v|(vn<<0)&((1<<(TcpSrc+0))-1))
 	return err
 }
-func (o tcp) Dst(b []byte) (v uint16, err error) {
-	if v, err = read_b16(b, 2); err != nil {
+func (o Tcp) Dst(b []byte) (v uint16, err error) {
+	if v, err = ReadB16(b, 2); err != nil {
 		return
 	}
-	v &= ((1 << (tcp_dst + 0)) - 1) >> 0
+	v &= ((1 << (TcpDst + 0)) - 1) >> 0
 	return
 }
-func (o tcp) SetDst(b []byte, vn uint16) error {
-	v, err := read_b16(b, 2)
+func (o Tcp) SetDst(b []byte, vn uint16) error {
+	v, err := ReadB16(b, 2)
 	if err != nil {
 		return err
 	}
-	err = write_b16(b, 2, v|(vn<<0)&((1<<(tcp_dst+0))-1))
+	err = WriteB16(b, 2, v|(vn<<0)&((1<<(TcpDst+0))-1))
 	return err
 }
-func (o tcp) Seq(b []byte) (v uint32, err error) {
-	if v, err = read_b32(b, 4); err != nil {
+func (o Tcp) Seq(b []byte) (v uint32, err error) {
+	if v, err = ReadB32(b, 4); err != nil {
 		return
 	}
-	v &= ((1 << (tcp_seq + 0)) - 1) >> 0
+	v &= ((1 << (TcpSeq + 0)) - 1) >> 0
 	return
 }
-func (o tcp) SetSeq(b []byte, vn uint32) error {
-	v, err := read_b32(b, 4)
+func (o Tcp) SetSeq(b []byte, vn uint32) error {
+	v, err := ReadB32(b, 4)
 	if err != nil {
 		return err
 	}
-	err = write_b32(b, 4, v|(vn<<0)&((1<<(tcp_seq+0))-1))
+	err = WriteB32(b, 4, v|(vn<<0)&((1<<(TcpSeq+0))-1))
 	return err
 }
-func (o tcp) Ack(b []byte) (v uint32, err error) {
-	if v, err = read_b32(b, 8); err != nil {
+func (o Tcp) Ack(b []byte) (v uint32, err error) {
+	if v, err = ReadB32(b, 8); err != nil {
 		return
 	}
-	v &= ((1 << (tcp_ack + 0)) - 1) >> 0
+	v &= ((1 << (TcpAck + 0)) - 1) >> 0
 	return
 }
-func (o tcp) SetAck(b []byte, vn uint32) error {
-	v, err := read_b32(b, 8)
+func (o Tcp) SetAck(b []byte, vn uint32) error {
+	v, err := ReadB32(b, 8)
 	if err != nil {
 		return err
 	}
-	err = write_b32(b, 8, v|(vn<<0)&((1<<(tcp_ack+0))-1))
+	err = WriteB32(b, 8, v|(vn<<0)&((1<<(TcpAck+0))-1))
 	return err
 }
-func (o tcp) Ctl(b []byte) (v uint16, err error) {
-	if v, err = read_b16(b, 12); err != nil {
+func (o Tcp) Ctl(b []byte) (v uint16, err error) {
+	if v, err = ReadB16(b, 12); err != nil {
 		return
 	}
-	v &= ((1 << (tcp_ctl + 0)) - 1) >> 0
+	v &= ((1 << (TcpCtl + 0)) - 1) >> 0
 	return
 }
-func (o tcp) SetCtl(b []byte, vn uint16) error {
-	v, err := read_b16(b, 12)
+func (o Tcp) SetCtl(b []byte, vn uint16) error {
+	v, err := ReadB16(b, 12)
 	if err != nil {
 		return err
 	}
-	err = write_b16(b, 12, v|(vn<<0)&((1<<(tcp_ctl+0))-1))
+	err = WriteB16(b, 12, v|(vn<<0)&((1<<(TcpCtl+0))-1))
 	return err
 }
-func (o tcp) Winsz(b []byte) (v uint16, err error) {
-	if v, err = read_b16(b, 14); err != nil {
+func (o Tcp) Winsz(b []byte) (v uint16, err error) {
+	if v, err = ReadB16(b, 14); err != nil {
 		return
 	}
-	v &= ((1 << (tcp_winsz + 0)) - 1) >> 0
+	v &= ((1 << (TcpWinsz + 0)) - 1) >> 0
 	return
 }
-func (o tcp) SetWinsz(b []byte, vn uint16) error {
-	v, err := read_b16(b, 14)
+func (o Tcp) SetWinsz(b []byte, vn uint16) error {
+	v, err := ReadB16(b, 14)
 	if err != nil {
 		return err
 	}
-	err = write_b16(b, 14, v|(vn<<0)&((1<<(tcp_winsz+0))-1))
+	err = WriteB16(b, 14, v|(vn<<0)&((1<<(TcpWinsz+0))-1))
 	return err
 }
-func (o tcp) Csum(b []byte) (v uint16, err error) {
-	if v, err = read_b16(b, 16); err != nil {
+func (o Tcp) Csum(b []byte) (v uint16, err error) {
+	if v, err = ReadB16(b, 16); err != nil {
 		return
 	}
-	v &= ((1 << (tcp_csum + 0)) - 1) >> 0
+	v &= ((1 << (TcpCsum + 0)) - 1) >> 0
 	return
 }
-func (o tcp) SetCsum(b []byte, vn uint16) error {
-	v, err := read_b16(b, 16)
+func (o Tcp) SetCsum(b []byte, vn uint16) error {
+	v, err := ReadB16(b, 16)
 	if err != nil {
 		return err
 	}
-	err = write_b16(b, 16, v|(vn<<0)&((1<<(tcp_csum+0))-1))
+	err = WriteB16(b, 16, v|(vn<<0)&((1<<(TcpCsum+0))-1))
 	return err
 }
-func (o tcp) Urg(b []byte) (v uint16, err error) {
-	if v, err = read_b16(b, 18); err != nil {
+func (o Tcp) Urg(b []byte) (v uint16, err error) {
+	if v, err = ReadB16(b, 18); err != nil {
 		return
 	}
-	v &= ((1 << (tcp_urg + 0)) - 1) >> 0
+	v &= ((1 << (TcpUrg + 0)) - 1) >> 0
 	return
 }
-func (o tcp) SetUrg(b []byte, vn uint16) error {
-	v, err := read_b16(b, 18)
+func (o Tcp) SetUrg(b []byte, vn uint16) error {
+	v, err := ReadB16(b, 18)
 	if err != nil {
 		return err
 	}
-	err = write_b16(b, 18, v|(vn<<0)&((1<<(tcp_urg+0))-1))
+	err = WriteB16(b, 18, v|(vn<<0)&((1<<(TcpUrg+0))-1))
 	return err
 }

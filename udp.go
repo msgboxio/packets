@@ -1,72 +1,72 @@
 package packets
 
 const (
-	udp_src  = 16
-	udp_dst  = 16
-	udp_len  = 16
-	udp_csum = 16
+	UdpSrc  = 16
+	UdpDst  = 16
+	UdpLen  = 16
+	UdpCsum = 16
 )
 
-type udp struct {
+type Udp struct {
 }
 
-func (o udp) Src(b []byte) (v uint16, err error) {
-	if v, err = read_b16(b, 0); err != nil {
+func (o Udp) Src(b []byte) (v uint16, err error) {
+	if v, err = ReadB16(b, 0); err != nil {
 		return
 	}
-	v &= ((1 << (udp_src + 0)) - 1) >> 0
+	v &= ((1 << (UdpSrc + 0)) - 1) >> 0
 	return
 }
-func (o udp) SetSrc(b []byte, vn uint16) error {
-	v, err := read_b16(b, 0)
+func (o Udp) SetSrc(b []byte, vn uint16) error {
+	v, err := ReadB16(b, 0)
 	if err != nil {
 		return err
 	}
-	err = write_b16(b, 0, v|(vn<<0)&((1<<(udp_src+0))-1))
+	err = WriteB16(b, 0, v|(vn<<0)&((1<<(UdpSrc+0))-1))
 	return err
 }
-func (o udp) Dst(b []byte) (v uint16, err error) {
-	if v, err = read_b16(b, 2); err != nil {
+func (o Udp) Dst(b []byte) (v uint16, err error) {
+	if v, err = ReadB16(b, 2); err != nil {
 		return
 	}
-	v &= ((1 << (udp_dst + 0)) - 1) >> 0
+	v &= ((1 << (UdpDst + 0)) - 1) >> 0
 	return
 }
-func (o udp) SetDst(b []byte, vn uint16) error {
-	v, err := read_b16(b, 2)
+func (o Udp) SetDst(b []byte, vn uint16) error {
+	v, err := ReadB16(b, 2)
 	if err != nil {
 		return err
 	}
-	err = write_b16(b, 2, v|(vn<<0)&((1<<(udp_dst+0))-1))
+	err = WriteB16(b, 2, v|(vn<<0)&((1<<(UdpDst+0))-1))
 	return err
 }
-func (o udp) Len(b []byte) (v uint16, err error) {
-	if v, err = read_b16(b, 4); err != nil {
+func (o Udp) Len(b []byte) (v uint16, err error) {
+	if v, err = ReadB16(b, 4); err != nil {
 		return
 	}
-	v &= ((1 << (udp_len + 0)) - 1) >> 0
+	v &= ((1 << (UdpLen + 0)) - 1) >> 0
 	return
 }
-func (o udp) SetLen(b []byte, vn uint16) error {
-	v, err := read_b16(b, 4)
+func (o Udp) SetLen(b []byte, vn uint16) error {
+	v, err := ReadB16(b, 4)
 	if err != nil {
 		return err
 	}
-	err = write_b16(b, 4, v|(vn<<0)&((1<<(udp_len+0))-1))
+	err = WriteB16(b, 4, v|(vn<<0)&((1<<(UdpLen+0))-1))
 	return err
 }
-func (o udp) Csum(b []byte) (v uint16, err error) {
-	if v, err = read_b16(b, 6); err != nil {
+func (o Udp) Csum(b []byte) (v uint16, err error) {
+	if v, err = ReadB16(b, 6); err != nil {
 		return
 	}
-	v &= ((1 << (udp_csum + 0)) - 1) >> 0
+	v &= ((1 << (UdpCsum + 0)) - 1) >> 0
 	return
 }
-func (o udp) SetCsum(b []byte, vn uint16) error {
-	v, err := read_b16(b, 6)
+func (o Udp) SetCsum(b []byte, vn uint16) error {
+	v, err := ReadB16(b, 6)
 	if err != nil {
 		return err
 	}
-	err = write_b16(b, 6, v|(vn<<0)&((1<<(udp_csum+0))-1))
+	err = WriteB16(b, 6, v|(vn<<0)&((1<<(UdpCsum+0))-1))
 	return err
 }
