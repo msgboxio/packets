@@ -4,30 +4,31 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpErrorMsg = 4
+const sizeofOfpErrorMsg = 12
 
 type OfpErrorMsg struct {
+	// header ofp_header
 	// msg_type uint16
 	// code uint16
 	// data [0]byte
 }
 
 func (o OfpErrorMsg) MsgType(b []byte) (uint16, error) {
-	return packets.ReadB16(b, 0)
+	return packets.ReadB16(b, 8)
 }
 func (o OfpErrorMsg) SetMsgType(b []byte, vn uint16) error {
-	return packets.WriteB16(b, 0, vn)
+	return packets.WriteB16(b, 8, vn)
 }
 func (o OfpErrorMsg) Code(b []byte) (uint16, error) {
-	return packets.ReadB16(b, 2)
+	return packets.ReadB16(b, 10)
 }
 func (o OfpErrorMsg) SetCode(b []byte, vn uint16) error {
-	return packets.WriteB16(b, 2, vn)
+	return packets.WriteB16(b, 10, vn)
 }
 func (o OfpErrorMsg) Data(b []byte) ([]byte, error) {
-	return b[4:4], nil
+	return b[12:12], nil
 }
 func (o OfpErrorMsg) SetData(b []byte, vn []byte) error {
-	copy(b[4:4], vn)
+	copy(b[12:12], vn)
 	return nil
 }
