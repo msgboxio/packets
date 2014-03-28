@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpExperimenterMultipartHeader = 8
+const SizeofOfpExperimenterMultipartHeader = 8
 
 type OfpExperimenterMultipartHeader struct {
 	// experimenter uint32

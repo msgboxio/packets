@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpFlowStatsRequest = 40
+const SizeofOfpFlowStatsRequest = 40
 
 type OfpFlowStatsRequest struct {
 	// table_id uint8

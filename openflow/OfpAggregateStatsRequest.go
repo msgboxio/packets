@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpAggregateStatsRequest = 40
+const SizeofOfpAggregateStatsRequest = 40
 
 type OfpAggregateStatsRequest struct {
 	// table_id uint8

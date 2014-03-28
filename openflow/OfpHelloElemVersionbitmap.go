@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpHelloElemVersionbitmap = 4
+const SizeofOfpHelloElemVersionbitmap = 4
 
 type OfpHelloElemVersionbitmap struct {
 	// msg_type uint16

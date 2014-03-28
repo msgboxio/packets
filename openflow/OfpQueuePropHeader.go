@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpQueuePropHeader = 8
+const SizeofOfpQueuePropHeader = 8
 
 type OfpQueuePropHeader struct {
 	// property uint16

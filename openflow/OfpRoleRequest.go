@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpRoleRequest = 24
+const SizeofOfpRoleRequest = 24
 
 type OfpRoleRequest struct {
 	// header ofp_header

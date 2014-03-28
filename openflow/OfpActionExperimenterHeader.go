@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpActionExperimenterHeader = 8
+const SizeofOfpActionExperimenterHeader = 8
 
 type OfpActionExperimenterHeader struct {
 	// msg_type uint16

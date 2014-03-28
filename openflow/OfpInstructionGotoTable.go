@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpInstructionGotoTable = 8
+const SizeofOfpInstructionGotoTable = 8
 
 type OfpInstructionGotoTable struct {
 	// msg_type uint16

@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpSwitchConfig = 12
+const SizeofOfpSwitchConfig = 12
 
 type OfpSwitchConfig struct {
 	// header ofp_header

@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpQueuePropMinRate = 16
+const SizeofOfpQueuePropMinRate = 16
 
 type OfpQueuePropMinRate struct {
 	// prop_header ofp_queue_prop_header

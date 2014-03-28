@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpMeterMultipartRequest = 8
+const SizeofOfpMeterMultipartRequest = 8
 
 type OfpMeterMultipartRequest struct {
 	// meter_id uint32

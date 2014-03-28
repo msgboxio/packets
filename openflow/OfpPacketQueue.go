@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpPacketQueue = 16
+const SizeofOfpPacketQueue = 16
 
 type OfpPacketQueue struct {
 	// queue_id uint32

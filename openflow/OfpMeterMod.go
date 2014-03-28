@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpMeterMod = 16
+const SizeofOfpMeterMod = 16
 
 type OfpMeterMod struct {
 	// header ofp_header

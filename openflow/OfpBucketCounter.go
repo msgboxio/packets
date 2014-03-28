@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpBucketCounter = 16
+const SizeofOfpBucketCounter = 16
 
 type OfpBucketCounter struct {
 	// packet_count uint64

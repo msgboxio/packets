@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpActionSetQueue = 8
+const SizeofOfpActionSetQueue = 8
 
 type OfpActionSetQueue struct {
 	// msg_type uint16

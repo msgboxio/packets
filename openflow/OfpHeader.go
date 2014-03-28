@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpHeader = 8
+const SizeofOfpHeader = 8
 
 type OfpHeader struct {
 	// version uint8

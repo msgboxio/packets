@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpFlowStats = 56
+const SizeofOfpFlowStats = 56
 
 type OfpFlowStats struct {
 	// length uint16

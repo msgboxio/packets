@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpMultipartReply = 16
+const SizeofOfpMultipartReply = 16
 
 type OfpMultipartReply struct {
 	// header ofp_header

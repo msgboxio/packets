@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpBucket = 16
+const SizeofOfpBucket = 16
 
 type OfpBucket struct {
 	// len uint16

@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpExperimenterHeader = 16
+const SizeofOfpExperimenterHeader = 16
 
 type OfpExperimenterHeader struct {
 	// header ofp_header

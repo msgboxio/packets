@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpQueueGetConfigRequest = 16
+const SizeofOfpQueueGetConfigRequest = 16
 
 type OfpQueueGetConfigRequest struct {
 	// header ofp_header

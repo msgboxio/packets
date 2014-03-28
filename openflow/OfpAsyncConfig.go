@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpAsyncConfig = 32
+const SizeofOfpAsyncConfig = 32
 
 type OfpAsyncConfig struct {
 	// header ofp_header

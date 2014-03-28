@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpTableFeaturePropHeader = 4
+const SizeofOfpTableFeaturePropHeader = 4
 
 type OfpTableFeaturePropHeader struct {
 	// msg_type uint16

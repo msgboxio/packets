@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpTableFeatures = 64
+const SizeofOfpTableFeatures = 64
 
 type OfpTableFeatures struct {
 	// length uint16

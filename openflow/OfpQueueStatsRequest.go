@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpQueueStatsRequest = 8
+const SizeofOfpQueueStatsRequest = 8
 
 type OfpQueueStatsRequest struct {
 	// port_no uint32

@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpPortMod = 40
+const SizeofOfpPortMod = 40
 
 type OfpPortMod struct {
 	// header ofp_header

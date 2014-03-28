@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpMatch = 8
+const SizeofOfpMatch = 8
 
 type OfpMatch struct {
 	// msg_type uint16

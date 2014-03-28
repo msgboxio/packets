@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpOxmExperimenterHeader = 8
+const SizeofOfpOxmExperimenterHeader = 8
 
 type OfpOxmExperimenterHeader struct {
 	// oxm_header uint32

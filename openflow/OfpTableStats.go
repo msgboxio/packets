@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpTableStats = 24
+const SizeofOfpTableStats = 24
 
 type OfpTableStats struct {
 	// table_id uint8

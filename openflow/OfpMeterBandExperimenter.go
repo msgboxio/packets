@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpMeterBandExperimenter = 16
+const SizeofOfpMeterBandExperimenter = 16
 
 type OfpMeterBandExperimenter struct {
 	// msg_type uint16

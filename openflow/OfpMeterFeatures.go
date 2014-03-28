@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpMeterFeatures = 16
+const SizeofOfpMeterFeatures = 16
 
 type OfpMeterFeatures struct {
 	// max_meter uint32

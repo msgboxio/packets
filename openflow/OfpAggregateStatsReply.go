@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpAggregateStatsReply = 24
+const SizeofOfpAggregateStatsReply = 24
 
 type OfpAggregateStatsReply struct {
 	// packet_count uint64

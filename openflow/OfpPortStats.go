@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpPortStats = 112
+const SizeofOfpPortStats = 112
 
 type OfpPortStats struct {
 	// port_no uint32

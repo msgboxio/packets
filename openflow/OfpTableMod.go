@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpTableMod = 16
+const SizeofOfpTableMod = 16
 
 type OfpTableMod struct {
 	// header ofp_header

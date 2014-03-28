@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpErrorMsg = 12
+const SizeofOfpErrorMsg = 12
 
 type OfpErrorMsg struct {
 	// header ofp_header

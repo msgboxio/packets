@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpHelloElemHeader = 4
+const SizeofOfpHelloElemHeader = 4
 
 type OfpHelloElemHeader struct {
 	// msg_type uint16

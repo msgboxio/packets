@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpMeterBandStats = 16
+const SizeofOfpMeterBandStats = 16
 
 type OfpMeterBandStats struct {
 	// packet_band_count uint64

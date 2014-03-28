@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpDesc = 1056
+const SizeofOfpDesc = 1056
 
 type OfpDesc struct {
 	// mfr_desc char[256]

@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpQueuePropExperimenter = 16
+const SizeofOfpQueuePropExperimenter = 16
 
 type OfpQueuePropExperimenter struct {
 	// prop_header ofp_queue_prop_header

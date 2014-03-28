@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpGroupStats = 40
+const SizeofOfpGroupStats = 40
 
 type OfpGroupStats struct {
 	// length uint16

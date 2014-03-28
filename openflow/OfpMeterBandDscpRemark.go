@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpMeterBandDscpRemark = 16
+const SizeofOfpMeterBandDscpRemark = 16
 
 type OfpMeterBandDscpRemark struct {
 	// msg_type uint16

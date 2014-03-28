@@ -4,7 +4,7 @@ import (
 	"msgbox.io/packets"
 )
 
-const sizeofOfpActionNwTtl = 8
+const SizeofOfpActionNwTtl = 8
 
 type OfpActionNwTtl struct {
 	// msg_type uint16
