@@ -31,6 +31,13 @@ func ReadB8(b []byte, offset int) (uint8, error) {
 	return b[offset], nil
 }
 
+func ReadSB32(b []byte, offset int) (int32, error) {
+	if len(b) < 4+offset {
+		return 0, io.EOF
+	}
+	return int32(binary.BigEndian.Uint32(b[offset:4])), nil
+}
+
 // readSlice is like ReadBytes but returns a reference to internal buffer data.
 func ReadSlice(b []byte, off int, lim int, delim byte) (line []byte, err error) {
 	i := bytes.IndexByte(b[off:], delim)
@@ -69,5 +76,13 @@ func WriteB8(b []byte, offset int, v uint8) error {
 		return io.EOF
 	}
 	b[offset] = v
+	return nil
+}
+
+func WriteSB32(b []byte, offset int, v int32) error {
+	if len(b) < 4+offset {
+		return io.EOF
+	}
+	binary.BigEndian.PutUint32(b[offset:4], uint32(v))
 	return nil
 }
