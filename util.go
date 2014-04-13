@@ -86,3 +86,10 @@ func WriteSB32(b []byte, offset int, v int32) error {
 	binary.BigEndian.PutUint32(b[offset:offset+4], uint32(v))
 	return nil
 }
+
+func EthAddrZero(ea []byte) bool {
+	return (ea[0] | ea[1] | ea[2] | ea[3] | ea[4] | ea[5]) == 0
+}
+func EthMaskIsExact(ea []byte) bool {
+	return (ea[0] & ea[1] & ea[2] & ea[3] & ea[4] & ea[5]) == 0xff
+}
