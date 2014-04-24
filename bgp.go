@@ -114,11 +114,11 @@ const (
 
 // states
 const (
-	Disabled    /* initial, or failed */
-	Idle        /* trying to connect */
-	Connect     /* connect issued */
-	Active      /* connected, waiting to send OPEN */
-	OpenSent    /* OPEN sent, waiting for peer OPEN */
-	OpenConfirm /* KEEPALIVE sent, waiting for peer KEEPALIVE */
-	Established /* established */
+	Disabled    = iota /* initial, or failed */
+	Idle               /* trying to connect */
+	Connect            /* connect issued */
+	Active             /* connected, waiting to send OPEN */
+	OpenSent           /* OPEN sent, waiting for peer OPEN */
+	OpenConfirm        /* KEEPALIVE sent, waiting for peer KEEPALIVE */
+	Established        /* established */
 )

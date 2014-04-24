@@ -100,6 +100,11 @@ var (
 	}
 )
 
+// zeros rightmost bit
+func Zrb(n uint32) uint32 {
+	return n ^ (n & (-n))
+}
+
 // counts number of trailing zeros
 func Ntz(i uint32) int {
 	return ZerosOnRightModLookup[(i&-i)%37]

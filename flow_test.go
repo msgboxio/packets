@@ -15,11 +15,14 @@ type S struct {
 	c int
 }
 
+var _ = fmt.Fprint
+var _ = hex.Decode
+
 func getBa(s *S) []byte {
 	l := int(unsafe.Sizeof(*s))
-	a := unsafe.Alignof(*s)
+	//a := unsafe.Alignof(*s)
 	p := unsafe.Pointer(s)
-	fmt.Printf("len %d, alignment %d, pointer 0x%08x\n", l, a, p)
+	//fmt.Printf("len %d, alignment %d, pointer 0x%08x\n", l, a, p)
 
 	_BYTE_SLICE := reflect.TypeOf([]byte(nil))
 	header := &reflect.SliceHeader{uintptr(p), l, l}
@@ -41,7 +44,7 @@ func TestUnsafe(t *testing.T) {
 	if bytes.Equal(ba1, ba3) {
 		t.Error("not unequal")
 	}
-	fmt.Printf("%s", hex.Dump(ba1))
-	fmt.Printf("%s", hex.Dump(ba2))
-	fmt.Printf("%s", hex.Dump(ba3))
+	// fmt.Printf("%s", hex.Dump(ba1))
+	// fmt.Printf("%s", hex.Dump(ba2))
+	// fmt.Printf("%s", hex.Dump(ba3))
 }
