@@ -10,16 +10,11 @@ type Match struct {
 }
 
 func NewMatch() *Match {
-	match := new(Match)
-	match.Flow = NewFlow()
-	match.Mask = NewFlow()
-	return match
+	return &Match{NewFlow(), NewFlow()}
 }
 
 func NewMatchFromFlow(flow *Flow) *Match {
-	match := new(Match)
-	match.Flow = flow
-	match.Mask = NewFlow()
+	match := &Match{flow, NewFlow()}
 	match.SetMaskFromFlow(flow)
 	return match
 }
@@ -168,11 +163,34 @@ func (match *Match) SetMetadataMasked(t uint64, m uint64) {
 	match.Flow.SetMetadata(t)
 }
 
-func (match *Match) SetNwDscp(t uint8) {
+func (match *Match) SetNwDscp(dscp uint8) {
 	match.Mask.SetNwTos(match.Mask.NwTos() | IP_DSCP_MASK)
 	tos := match.Flow.NwTos() & (0xff & ^IP_DSCP_MASK)
-	match.Flow.SetNwTos(tos | (t & IP_DSCP_MASK))
+	match.Flow.SetNwTos(tos | (dscp & IP_DSCP_MASK))
 }
 
-func (match *Match) SetNwEcn(t uint8) {
+func (match *Match) SetNwEcn(nw_ecn uint8) {
+	match.Mask.SetNwTos(match.Mask.NwTos() | IP_ECN_MASK)
+	tos := match.Flow.NwTos() & (0xff & ^IP_ECN_MASK)
+	match.Flow.SetNwTos(tos | (nw_ecn & IP_ECN_MASK))
+}
+
+func (match *Match) SetNwProto(nw_proto uint8) {
+	match.Flow.SetNwProto(nw_proto)
+	match.Mask.SetNwProto(math.MaxUint8)
+}
+
+func (match *Match) SetNwTtl(nw_ttl uint8) {
+	match.Mask.SetNwTtl(math.MaxUint8)
+	match.Flow.SetNwTtl(nw_ttl)
+}
+
+func (match *Match) SetNwFrag(nw_frag uint8) {
+	match.Mask.SetNwFrag(match.Mask.NwFrag() | FLOW_NW_FRAG_MASK)
+	match.Flow.SetNwFrag(nw_frag)
+}
+
+func (match *Match) SetIcmpType(icmp_type uint8) {
+	match.Flow.SetTpSrc(uint16(icmp_type) & math.MaxUint16)
+	match.Mask.SetTpSrc(math.MaxUint16)
 }
