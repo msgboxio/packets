@@ -7,14 +7,16 @@ import (
 
 /* 802.1Q. */
 const (
-	QLAN_QTAG_LEN     = 4
-	VLAN_VID_MASK     = uint16(0x0fff)
-	VLAN_VID_SHIFT    = 0
-	VLAN_PCP_MASK     = 0xe000
-	VLAN_PCP_SHIFT    = 13
-	VLAN_CFI          = 0x1000
-	VLAN_CFI_SHIFT    = 12
-	VLAN_VID_CFI_MASK = VLAN_CFI | VLAN_VID_MASK
+	QLAN_QTAG_LEN = 4
+)
+const (
+	VLAN_VID_MASK     uint16 = 0x0fff
+	VLAN_VID_SHIFT    uint16 = 0
+	VLAN_PCP_MASK     uint16 = 0xe000
+	VLAN_PCP_SHIFT    uint16 = 13
+	VLAN_CFI          uint16 = 0x1000
+	VLAN_CFI_SHIFT    uint16 = 12
+	VLAN_VID_CFI_MASK uint16 = VLAN_CFI | VLAN_VID_MASK
 )
 
 const (
@@ -22,17 +24,17 @@ const (
 	 * Minimum value for an Ethernet type.
 	 * Values below this are IEEE 802.2 frame lengths.
 	 */
-	ETH_TYPE_MIN         = uint16(0x600)
-	ETH_TYPE_IP          = 0x0800
-	ETH_TYPE_ARP         = 0x0806
-	ETH_TYPE_VLAN_8021Q  = 0x8100
-	ETH_TYPE_VLAN        = ETH_TYPE_VLAN_8021Q
-	ETH_TYPE_VLAN_8021AD = 0x88a8
-	ETH_TYPE_IPV6        = 0x86dd
-	ETH_TYPE_LACP        = 0x8809
-	ETH_TYPE_RARP        = 0x8035
-	ETH_TYPE_MPLS        = 0x8847
-	ETH_TYPE_MPLS_MCAST  = 0x8848
+	ETH_TYPE_MIN         uint16 = 0x600
+	ETH_TYPE_IP          uint16 = 0x0800
+	ETH_TYPE_ARP         uint16 = 0x0806
+	ETH_TYPE_VLAN_8021Q  uint16 = 0x8100
+	ETH_TYPE_VLAN        uint16 = ETH_TYPE_VLAN_8021Q
+	ETH_TYPE_VLAN_8021AD uint16 = 0x88a8
+	ETH_TYPE_IPV6        uint16 = 0x86dd
+	ETH_TYPE_LACP        uint16 = 0x8809
+	ETH_TYPE_RARP        uint16 = 0x8035
+	ETH_TYPE_MPLS        uint16 = 0x8847
+	ETH_TYPE_MPLS_MCAST  uint16 = 0x8848
 )
 
 const (
@@ -98,12 +100,12 @@ func MplsLseToBos(lse uint32) uint8 {
 // ip4
 const (
 	// TOS fields
-	IP_ECN_NOT_ECT = uint8(0x0)
-	IP_ECN_ECT_1   = 0x01
-	IP_ECN_ECT_0   = 0x02
-	IP_ECN_CE      = 0x03
-	IP_ECN_MASK    = 0x03
-	IP_DSCP_MASK   = 0xfc
+	IP_ECN_NOT_ECT uint8 = 0x0
+	IP_ECN_ECT_1   uint8 = 0x01
+	IP_ECN_ECT_0   uint8 = 0x02
+	IP_ECN_CE      uint8 = 0x03
+	IP_ECN_MASK    uint8 = 0x03
+	IP_DSCP_MASK   uint8 = 0xfc
 	// Frag Fields
 	IP_DONT_FRAGMENT  = uint16(0x4000) /* Don't fragment. */
 	IP_MORE_FRAGMENTS = 0x2000         /* More fragments. */
@@ -111,6 +113,9 @@ const (
 )
 
 const (
+	ARP_OP_REQUEST  = 1
+	ARP_OP_RESPONSE = 2
+
 	ARP_ETH_HEADER_LEN = 28
 )
 

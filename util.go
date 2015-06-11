@@ -19,6 +19,13 @@ func ReadB32(b []byte, offset int) (uint32, error) {
 	}
 	return binary.BigEndian.Uint32(b[offset : offset+4]), nil
 }
+func ReadB24(b []byte, offset int) (uint32, error) {
+	if len(b) < 3+offset {
+		return 0, io.EOF
+	}
+	b = b[offset:]
+	return uint32(b[0])<<16 | uint32(b[1])<<8 | uint32(b[2]), nil
+}
 func ReadB16(b []byte, offset int) (uint16, error) {
 	if len(b) < 2+offset {
 		return 0, io.EOF
@@ -63,6 +70,16 @@ func WriteB32(b []byte, offset int, v uint32) error {
 		return io.EOF
 	}
 	binary.BigEndian.PutUint32(b[offset:offset+4], v)
+	return nil
+}
+func WriteB24(b []byte, offset int, v uint32) error {
+	if len(b) < 3+offset {
+		return io.EOF
+	}
+	b = b[offset : offset+3]
+	b[0] = byte(v >> 16)
+	b[1] = byte(v >> 8)
+	b[2] = byte(v)
 	return nil
 }
 func WriteB16(b []byte, offset int, v uint16) error {
