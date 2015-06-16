@@ -46,7 +46,6 @@ func ReadSB32(b []byte, offset int) (int32, error) {
 	return int32(binary.BigEndian.Uint32(b[offset : offset+4])), nil
 }
 
-// readSlice is like ReadBytes but returns a reference to internal buffer data.
 func ReadSlice(b []byte, off int, lim int, delim byte) (line []byte, err error) {
 	i := bytes.IndexByte(b[off:], delim)
 	end := off + i
